@@ -94,3 +94,9 @@ LyngkTestCase.prototype.testStory10 = function () {
     intersections.pose(Lyngk.Color.WHITE);
     assertTrue(intersections.getState() === Lyngk.State.FULL_STACK && intersections.color() === Lyngk.Color.WHITE);
 };
+
+/*** STORY 11 ***/
+LyngkTestCase.prototype.testStory11 = function () {
+  var board = new Lyngk.Engine();
+  assertTrue(board.fullOfPieces());
+};
