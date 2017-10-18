@@ -36,3 +36,10 @@ LyngkTestCase.prototype.testStory3 = function () {
   assertTrue(coordinates.toString()==="A3");
 };
 
+
+/*** STORY 4 ***/
+
+LyngkTestCase.prototype.testStory4 = function () {
+  var coordinates = nex Lyngk.Coordinates('B',1);
+  assertTrue(coordinates.toString()==="invalid");
+};
