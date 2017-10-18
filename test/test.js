@@ -65,3 +65,11 @@ LyngkTestCase.prototype.testStory7 = function () {
   var intersections = new Lyngk.Intersection();
   assertTrue(intersections.getState() === Lyngk.State.VACANT);// Use State Tab in Intersection
 };
+
+/*** STORY 8 ***/
+LyngkTestCase.prototype.testStory8 = function () {
+  var intersections = new Lyngk.Intersection();
+  intersections.pose(Lyngk.Color.BLUE);
+  assertTrue(intersections.getState() === Lyngk.State.ONE_PIECE && intersections.color() === Lyngk.Color.BLUE);
+
+};

@@ -19,8 +19,8 @@
       <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="65" column="94" lean-forward="false" selection-start-line="65" selection-start-column="94" selection-end-line="65" selection-end-column="94" />
+            <state relative-caret-position="296">
+              <caret line="74" column="2" lean-forward="true" selection-start-line="74" selection-start-column="2" selection-end-line="74" selection-end-column="2" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -31,8 +31,8 @@
       <file leaf-file-name="Intersection.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Intersection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            <state relative-caret-position="252">
+              <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -260,7 +260,7 @@
       <workItem from="1506237169614" duration="5384000" />
       <workItem from="1506244007400" duration="117000" />
       <workItem from="1508325078147" duration="299000" />
-      <workItem from="1508332198691" duration="8517000" />
+      <workItem from="1508332198691" duration="9822000" />
     </task>
     <servers />
   </component>
@@ -297,7 +297,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25454000" />
+    <option name="totallyTimeSpent" value="26759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="83" y="27" width="1221" height="741" extended-state="0" />
@@ -455,8 +455,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Intersection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        <state relative-caret-position="252">
+          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -465,8 +465,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="65" column="94" lean-forward="false" selection-start-line="65" selection-start-column="94" selection-end-line="65" selection-end-column="94" />
+        <state relative-caret-position="296">
+          <caret line="74" column="2" lean-forward="true" selection-start-line="74" selection-start-column="2" selection-end-line="74" selection-end-column="2" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
