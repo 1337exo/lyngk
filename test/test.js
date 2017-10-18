@@ -63,5 +63,5 @@ LyngkTestCase.prototype.testStory6 = function () {
 
 LyngkTestCase.prototype.testStory7 = function () {
   var intersections = new Lyngk.Intersection();
-  assertTrue(intersections.getState() === Lyngk.State.VACANT);
+  assertTrue(intersections.getState() === Lyngk.State.VACANT);// Use State Tab in Intersection
 };
