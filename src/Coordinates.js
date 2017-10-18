@@ -10,6 +10,7 @@ Lyngk.Coordinates = function (c, l) {
     var private_col = c;
     var private_line = l;
     this.is_valid = function () {
+       // Coordonnée valide
     var goodCoordinates = [
         'A3',
         'B2','B3','B4','B5',
@@ -21,8 +22,7 @@ Lyngk.Coordinates = function (c, l) {
         'H5','H6','H7','H8',
         'I7'
     ];
-
-
+        
       return goodCoordinates.indexOf(private_col+private_line)>=0;
     };
 
