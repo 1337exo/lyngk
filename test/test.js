@@ -58,3 +58,10 @@ LyngkTestCase.prototype.testStory6 = function () {
   var coordinates = new Lyngk.Coordinates("I",7)
   assertTrue(coordinates.hash()=== 737);
 };
+
+/*** STORY 7 ***/
+
+LyngkTestCase.prototype.testStory7 = function () {
+  var intersections = new Lyngk.Intersection();
+  assertTrue(intersections.getState() === "VACANT");
+};
