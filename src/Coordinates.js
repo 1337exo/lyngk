@@ -22,7 +22,7 @@ Lyngk.Coordinates = function (c, l) {
         'H5','H6','H7','H8',
         'I7'
     ];
-        
+
       return goodCoordinates.indexOf(private_col+private_line)>=0;
     };
 
