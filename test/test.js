@@ -73,3 +73,12 @@ LyngkTestCase.prototype.testStory8 = function () {
   assertTrue(intersections.getState() === Lyngk.State.ONE_PIECE && intersections.color() === Lyngk.Color.BLUE);
 
 };
+
+/*** STORY 9 ***/
+
+LyngkTestCase.prototype.testStory9 = function () {
+  var intersections = new Lyngk.Intersection();
+  intersections.pose(Lyngk.Color.BLUE);
+  intersections.pose(Lyngk.Color.RED);
+  assertTrue(intersections.getState() === Lyngk.State.STACK && intersections.color() === Lyngk.Color.RED);
+};
