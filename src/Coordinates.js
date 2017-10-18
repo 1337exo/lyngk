@@ -36,4 +36,9 @@ Lyngk.Coordinates = function (c, l) {
           return "invalid";
     };
 
+    // Story 5 clone
+    this.clone = function () {
+      return new Lyngk.Coordinates(private_col,private_line);
+    };
+
 };
