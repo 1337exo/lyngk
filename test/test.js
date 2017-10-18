@@ -51,3 +51,10 @@ LyngkTestCase.prototype.testStory5 = function () {
   var coordinatesClone = coordinates.clone();
   assertTrue(coordinates.toString()===coordinatesClone.toString());
 };
+
+/*** STORY 6 ***/
+
+LyngkTestCase.prototype.testStory6 = function () {
+  var coordinates = new Lyngk.Coordinates("I",7)
+  assertTrue(coordinates.hash()=== 737);
+};
