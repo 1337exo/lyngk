@@ -43,3 +43,11 @@ LyngkTestCase.prototype.testStory4 = function () {
   var coordinates = new Lyngk.Coordinates('B',1);
   assertTrue(coordinates.toString()==="invalid");
 };
+
+/*** STORY 5 ***/
+
+LyngkTestCase.prototype.testStory5 = function () {
+  var coordinates = new Lyngk.Coordinates("A",3);
+  var coordinatesClone = coordinates.clone();
+  assertTrue(coordinates.toString()===coordinatesClone.toString());
+};
