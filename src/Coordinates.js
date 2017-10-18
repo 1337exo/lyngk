@@ -26,4 +26,9 @@ Lyngk.Coordinates = function (c, l) {
       return goodCoordinates.indexOf(private_col+private_line)>=0;
     };
 
+    this.toString = function () {
+      if(this.is_valid())
+          return private_col+private_line;
+    };
+
 };
