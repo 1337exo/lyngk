@@ -40,6 +40,6 @@ LyngkTestCase.prototype.testStory3 = function () {
 /*** STORY 4 ***/
 
 LyngkTestCase.prototype.testStory4 = function () {
-  var coordinates = nex Lyngk.Coordinates('B',1);
+  var coordinates = new Lyngk.Coordinates('B',1);
   assertTrue(coordinates.toString()==="invalid");
 };

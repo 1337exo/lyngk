@@ -29,6 +29,8 @@ Lyngk.Coordinates = function (c, l) {
     this.toString = function () {
       if(this.is_valid())
           return private_col+private_line;
+      else
+          return "invalid";
     };
 
 };
