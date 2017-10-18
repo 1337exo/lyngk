@@ -41,4 +41,9 @@ Lyngk.Coordinates = function (c, l) {
       return new Lyngk.Coordinates(private_col,private_line);
     };
 
+    // Story 6 Hash
+    this.hash = function () {
+      return parseInt(private_col.charCodeAt(0)+''+private_line);
+    };
 };
+
