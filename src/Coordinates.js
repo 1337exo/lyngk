@@ -9,8 +9,10 @@ Lyngk.Coordinates = function (c, l) {
 
     var private_col = c;
     var private_line = l;
+
+    // Story 1
     this.is_valid = function () {
-       // Coordonnée valide
+
     var goodCoordinates = [
         'A3',
         'B2','B3','B4','B5',
@@ -26,6 +28,7 @@ Lyngk.Coordinates = function (c, l) {
       return goodCoordinates.indexOf(private_col+private_line)>=0;
     };
 
+    // Story 3 et 4 Représentation
     this.toString = function () {
       if(this.is_valid())
           return private_col+private_line;
