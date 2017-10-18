@@ -82,3 +82,15 @@ LyngkTestCase.prototype.testStory9 = function () {
   intersections.pose(Lyngk.Color.RED);
   assertTrue(intersections.getState() === Lyngk.State.STACK && intersections.color() === Lyngk.Color.RED);
 };
+
+/*** STORY 10 ***/
+
+LyngkTestCase.prototype.testStory10 = function () {
+    var intersections = new Lyngk.Intersection();
+    intersections.pose(Lyngk.Color.BLUE);
+    intersections.pose(Lyngk.Color.RED);
+    intersections.pose(Lyngk.Color.GREEN);
+    intersections.pose(Lyngk.Color.BLACK);
+    intersections.pose(Lyngk.Color.WHITE);
+    assertTrue(intersections.getState() === Lyngk.State.FULL_STACK && intersections.color() === Lyngk.Color.WHITE);
+};
