@@ -21,10 +21,18 @@ LyngkTestCase.prototype.testStory2 = function () {
   var letter = "ABCDEFGHI"
   for(var l = 0; l < letter.length; ++l){
       for(var c = 1; c < 10; ++c){
-          var coord = new Lyngk.Coordinates(letter[l],c);
-          if(coord.is_valid())
+          var coordinates = new Lyngk.Coordinates(letter[l],c);
+          if(coordinates.is_valid())
               ++nbValidCase;
       }
   }
   assertTrue(nbValidCase===43);
 };
+
+/*** STORY 3 ***/
+
+LyngkTestCase.prototype.testStory3 = function () {
+  var coordinates = new Lyngk.Coordinates('A',3);
+  assertTrue(coordinates.toString()==="A3");
+};
+
