@@ -5,29 +5,35 @@
 
 Lyngk.State = {VACANT: 0, ONE_PIECE: 1, STACK: 2, FULL_STACK: 3};
 
-Lyngk.Intersection = function () {
+Lyngk.Intersection = function (c) {
 
-    // Story 7 état VACANT
+    var private_coordinate = c;
     var defaultState = Lyngk.State.VACANT;
-    var piece = [];
+    var private_piece = [];
+
+    var private_color;
+
 
     this.getState = function () {
       return defaultState;
     };
 
-    this.color = function () {
-        return piece[piece.length -1].getColor();
-    }
+    this.getColor = function () {
+        return private_color;
+    };
 
-    this.pose = function (c) {
-      if(piece.length == 0)
-          defaultState = Lyngk.State.ONE_PIECE;
-      else if(piece.length < 4)
-          defaultState = Lyngk.State.STACK;
-      else
-          defaultState = Lyngk.State.FULL_STACK;
+    this.pose = function (p) {
+        private_piece.push(p);
+        private_color = p.getColor();
 
-      piece.push(new Lyngk.Piece(c))
+        if(defaultState === Lyngk.State.ONE_PIECE){
+            defaultState = Lyngk.State.STACK;
+        }else{
+            defaultState = Lyngk.State.ONE_PIECE;
+        }
+
+        if(private_piece.length === 5)
+            defaultState = Lyngk.State.FULL_STACK;
     };
 
 };

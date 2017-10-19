@@ -69,34 +69,40 @@ LyngkTestCase.prototype.testStory7 = function () {
 /*** STORY 8 ***/
 LyngkTestCase.prototype.testStory8 = function () {
   var intersections = new Lyngk.Intersection();
-  intersections.pose(Lyngk.Color.BLUE);
-  assertTrue(intersections.getState() === Lyngk.State.ONE_PIECE && intersections.color() === Lyngk.Color.BLUE);
-
+  intersections.pose(new Lyngk.Piece(Lyngk.Color.BLUE));
+  assertTrue(intersections.getState() === Lyngk.State.ONE_PIECE && intersections.getColor() === Lyngk.Color.BLUE);
 };
 
 /*** STORY 9 ***/
 
 LyngkTestCase.prototype.testStory9 = function () {
   var intersections = new Lyngk.Intersection();
-  intersections.pose(Lyngk.Color.BLUE);
-  intersections.pose(Lyngk.Color.RED);
-  assertTrue(intersections.getState() === Lyngk.State.STACK && intersections.color() === Lyngk.Color.RED);
+    intersections.pose(new Lyngk.Piece(Lyngk.Color.BLUE));
+    intersections.pose(new Lyngk.Piece(Lyngk.Color.RED));
+  assertTrue(intersections.getState() === Lyngk.State.STACK && intersections.getColor() === Lyngk.Color.RED);
 };
 
 /*** STORY 10 ***/
 
 LyngkTestCase.prototype.testStory10 = function () {
     var intersections = new Lyngk.Intersection();
-    intersections.pose(Lyngk.Color.BLUE);
-    intersections.pose(Lyngk.Color.RED);
-    intersections.pose(Lyngk.Color.GREEN);
-    intersections.pose(Lyngk.Color.BLACK);
-    intersections.pose(Lyngk.Color.WHITE);
-    assertTrue(intersections.getState() === Lyngk.State.FULL_STACK && intersections.color() === Lyngk.Color.WHITE);
+    intersections.pose(new Lyngk.Piece(Lyngk.Color.BLUE));
+    intersections.pose(new Lyngk.Piece(Lyngk.Color.RED));
+    intersections.pose(new Lyngk.Piece(Lyngk.Color.GREEN));
+    intersections.pose(new Lyngk.Piece(Lyngk.Color.BLACK));
+    intersections.pose(new Lyngk.Piece(Lyngk.Color.WHITE));
+    assertTrue(intersections.getState() === Lyngk.State.FULL_STACK && intersections.getColor() === Lyngk.Color.WHITE);
 };
 
 /*** STORY 11 ***/
 LyngkTestCase.prototype.testStory11 = function () {
   var board = new Lyngk.Engine();
-  assertTrue(board.fullOfPieces());
+  board.initBoard();
+  var plateau = board.getBoard();
+  for(var i = 0;i <plateau.length;++i){
+      assertTrue(plateau[i].getState() === Lyngk.State.ONE_PIECE);
+    }
+
 };
+
+/*** STORY 12 ***/
