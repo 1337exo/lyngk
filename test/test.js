@@ -106,3 +106,21 @@ LyngkTestCase.prototype.testStory11 = function () {
 };
 
 /*** STORY 12 ***/
+LyngkTestCase.prototype.testStory12 = function () {
+  var board = new Lyngk.Engine();
+  board.initBoard();
+  var plateau = board.getBoard();
+  var nbColor = 0;
+  for(var i = 0; i < Object.keys(Lyngk.Color).length; ++i){
+      nbColor = 0;
+      for(var j = 0;j<plateau.length;++j){
+          if(plateau[j].getColor() === Object.keys(Lyngk.Color)[i])
+              ++nbColor;
+      }
+      if((Object.keys(Lyngk.Color).length-1)  === i){
+          assertEquals(nbColor, 3);
+      }else{
+          assertEquals(nbColor, 8);
+      }
+  }
+};
