@@ -142,9 +142,9 @@ LyngkTestCase.prototype.testStory13 = function () {
 LyngkTestCase.prototype.testStory14 = function () {
   var board = new Lyngk.Engine();
   board.initBoard();
-  var plateau = boar.getBoard();
+  var plateau = board.getBoard();
     for(var i = 0; i < plateau.length; ++i){
         assertTrue(plateau[i].getColor() === plateau[i].getPiece()[plateau[i].getHeight()-1].getColor());
     }
-    
+
 };

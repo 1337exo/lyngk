@@ -24,6 +24,10 @@ Lyngk.Intersection = function (c) {
         return private_color;
     };
 
+    this.getPiece = function () {
+      return private_piece;
+    };
+
     this.pose = function (p) {
         private_piece.push(p);
 
