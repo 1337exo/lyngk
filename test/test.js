@@ -124,3 +124,15 @@ LyngkTestCase.prototype.testStory12 = function () {
       }
   }
 };
+
+/*** STORY 13 ***/
+
+LyngkTestCase.prototype.testStory13 = function () {
+  var board = Lyngk.Engine();
+  board.initBoard();
+  var plateau = board.getBoard();
+  for(var i = 0; i < plateau.length; ++i){
+      assertTrue(plateau[i].getHeight() === 1);
+  }
+
+};

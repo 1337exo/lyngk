@@ -10,8 +10,9 @@ Lyngk.Intersection = function (c) {
     var private_coordinate = c;
     var defaultState = Lyngk.State.VACANT;
     var private_piece = [];
-
     var private_color;
+
+
 
 
     this.getState = function () {
@@ -24,12 +25,16 @@ Lyngk.Intersection = function (c) {
 
     this.pose = function (p) {
         private_piece.push(p);
-        private_color = p.getColor();
 
-        if(defaultState === Lyngk.State.ONE_PIECE){
-            defaultState = Lyngk.State.STACK;
-        }else{
-            defaultState = Lyngk.State.ONE_PIECE;
+
+        if(defaultState !== Lyngk.State.FULL_STACK){
+            if(defaultState === Lyngk.State.ONE_PIECE){
+                defaultState = Lyngk.State.STACK;
+            } else {
+                defaultState = Lyngk.State.ONE_PIECE;
+            }
+
+            private_color = p.getColor();
         }
 
         if(private_piece.length === 5)
