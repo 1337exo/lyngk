@@ -11,12 +11,20 @@ Lyngk.Intersection = function (c) {
     var defaultState = Lyngk.State.VACANT;
     var private_piece = [];
 
+    this.getCoordinate = function () {
+      return private_coordinate;
+    };
+
     this.getHeight = function () {
       return private_piece.length;
     };
 
     this.getState = function () {
       return defaultState;
+    };
+
+    this.setState = function (state) {
+        defaultState = state;
     };
 
     this.getColor = function () {
@@ -43,4 +51,9 @@ Lyngk.Intersection = function (c) {
             defaultState = Lyngk.State.FULL_STACK;
     };
 
+    this.retir = function (inter) {
+        defaultState = Lyngk.State.VACANT;
+        inter.pose(private_piece[private_piece.length -1]);
+        private_piece.pop();
+    };
 };

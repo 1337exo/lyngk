@@ -42,6 +42,20 @@ Lyngk.Engine = function () {
       return rand;
     };
 
+    this.getIntersection = function (c1) {
+        for (var i = 0; i < plateau.length; ++i) {
+            if (plateau[i].getCoordinate().toString() === c1.toString()) {
+                return i;
+            }
+        }
+    };
+
+    this.move = function (c1,c2) {
+      plateau[this.getIntersection(c1)].retir(plateau[this.getIntersection(c2)]);
+    };
+
+
+
     this.getBoard = function () {
      return plateau;
 

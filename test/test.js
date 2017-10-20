@@ -154,7 +154,13 @@ LyngkTestCase.prototype.testStory14 = function () {
 LyngkTestCase.prototype.testStory15 = function () {
   var board = new Lyngk.Engine();
   board.initBoard();
-  var colorFirstInter = board.Intersection("A3").getColor();
+  var plateau = board.getBoard();
+  var c1 = new Lyngk.Coordinates("A",3);
+  var c2 = new Lyngk.Coordinates("B",3);
+  var index = board.getIntersection(c1);
+  var index2 = board.getIntersection(c2)
+  var colorA3 = plateau[index].getColor();
+
   board.move("A3","B3");
-  assertTrue(board["A3"].getState() === Lyngk.State.VACANT && board["B3"].getColor() === colorFirstInter);
+  assertTrue(plateau[index].getState() === Lyngk.State.VACANT && plateau[index2].getColor() === colorA3);
 };
