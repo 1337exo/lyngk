@@ -128,11 +128,23 @@ LyngkTestCase.prototype.testStory12 = function () {
 /*** STORY 13 ***/
 
 LyngkTestCase.prototype.testStory13 = function () {
-  var board = Lyngk.Engine();
+  var board = new Lyngk.Engine();
   board.initBoard();
   var plateau = board.getBoard();
   for(var i = 0; i < plateau.length; ++i){
       assertTrue(plateau[i].getHeight() === 1);
   }
 
+};
+
+/*** STORY ***/
+
+LyngkTestCase.prototype.testStory14 = function () {
+  var board = new Lyngk.Engine();
+  board.initBoard();
+  var plateau = boar.getBoard();
+    for(var i = 0; i < plateau.length; ++i){
+        assertTrue(plateau[i].getColor() === plateau[i].getPiece()[plateau[i].getHeight()-1].getColor());
+    }
+    
 };

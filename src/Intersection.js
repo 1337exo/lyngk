@@ -12,8 +12,9 @@ Lyngk.Intersection = function (c) {
     var private_piece = [];
     var private_color;
 
-
-
+    this.getHeight = function () {
+      return private_piece.length;
+    };
 
     this.getState = function () {
       return defaultState;
