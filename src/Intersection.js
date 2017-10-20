@@ -10,7 +10,6 @@ Lyngk.Intersection = function (c) {
     var private_coordinate = c;
     var defaultState = Lyngk.State.VACANT;
     var private_piece = [];
-    var private_color;
 
     this.getHeight = function () {
       return private_piece.length;
@@ -21,7 +20,7 @@ Lyngk.Intersection = function (c) {
     };
 
     this.getColor = function () {
-        return private_color;
+        return private_piece[private_piece.length-1].getColor();
     };
 
     this.getPiece = function () {
@@ -38,8 +37,6 @@ Lyngk.Intersection = function (c) {
             } else {
                 defaultState = Lyngk.State.ONE_PIECE;
             }
-
-            private_color = p.getColor();
         }
 
         if(private_piece.length === 5)

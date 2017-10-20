@@ -137,7 +137,7 @@ LyngkTestCase.prototype.testStory13 = function () {
 
 };
 
-/*** STORY ***/
+/*** STORY 14 ***/
 
 LyngkTestCase.prototype.testStory14 = function () {
   var board = new Lyngk.Engine();
@@ -147,4 +147,14 @@ LyngkTestCase.prototype.testStory14 = function () {
         assertTrue(plateau[i].getColor() === plateau[i].getPiece()[plateau[i].getHeight()-1].getColor());
     }
 
+};
+
+/*** STORY 15 ***/
+
+LyngkTestCase.prototype.testStory15 = function () {
+  var board = new Lyngk.Engine();
+  board.initBoard();
+  var colorFirstInter = board.Intersection("A3").getColor();
+  board.move("A3","B3");
+  assertTrue(board["A3"].getState() === Lyngk.State.VACANT && board["B3"].getColor() === colorFirstInter);
 };
