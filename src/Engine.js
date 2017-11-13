@@ -51,6 +51,7 @@ Lyngk.Engine = function () {
     };
 
     this.move = function (c1,c2) {
+        if(plateau[this.getIntersection(c2)].getState() !== Lyngk.State.VACANT)
       plateau[this.getIntersection(c1)].retir(plateau[this.getIntersection(c2)]);
     };
 
