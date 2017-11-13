@@ -155,12 +155,25 @@ LyngkTestCase.prototype.testStory15 = function () {
   var board = new Lyngk.Engine();
   board.initBoard();
   var plateau = board.getBoard();
-  var c1 = new Lyngk.Coordinates("A",3);
-  var c2 = new Lyngk.Coordinates("B",3);
-  var index = board.getIntersection(c1);
-  var index2 = board.getIntersection(c2)
+  var index = board.getIntersection("A3");
+  var index2 = board.getIntersection("B3");
   var colorA3 = plateau[index].getColor();
-
   board.move("A3","B3");
   assertTrue(plateau[index].getState() === Lyngk.State.VACANT && plateau[index2].getColor() === colorA3);
+};
+
+
+/*** STORY 16 ***/
+LyngkTestCase.prototype.testStory16 = function () {
+    var board = new Lyngk.Engine();
+    board.initBoard();
+    var plateau = board.getBoard();
+    var index = board.getIntersection("B3");
+    var index2 = board.getIntersection("B2");
+    board.move("A3","B3");
+    var HeightLastMove = plateau[index2].getHeight();
+    var colorLastMove = plateau[index].getColor();
+    board.move("B3","B2");
+    assertTrue(plateau[index].getState() === Lyngk.State.VACANT && plateau[index2].getColor() === colorLastMove
+    && plateau[index2].getHeight() === plateau[index].getHeight() + HeightLastMove);
 };
