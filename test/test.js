@@ -189,3 +189,13 @@ LyngkTestCase.prototype.testStory17 = function () {
 
     assertTrue(plateau[board.getIntersection("B3")].getState() === Lyngk.State.VACANT);
 };
+
+/*** STORY 18 ***/
+LyngkTestCase.prototype.testStory18 = function () {
+    var board = new Lyngk.Engine();
+    board.initBoard();
+    var plateau = board.getBoard();
+    board.move("C2","B3");
+    assertTrue(plateau[board.getIntersection("B3")].getHeight() === 1 && plateau[board.getIntersection("C2")].getHeight() === 1);
+
+};
