@@ -11,15 +11,21 @@ Lyngk.Engine = function () {
     this.initBoard = function () {
         var letter = "ABCDEFGHI";
         goodColor = [0,0,0,0,0,0];
-        for(var i = 0; i < letter.length; ++i){
-            for(var j = 0; j<=9;++j){
-                var coordinates = new Lyngk.Coordinates(letter[i],j);
-                if(coordinates.is_valid()){
-                    var intersection = new Lyngk.Intersection(coordinates);
-                    var piece = new Lyngk.Piece(Object.keys(Lyngk.Color)[this.randColor()]);
-                    intersection.pose(piece);
-                    plateau.push(intersection);
-                }
+        for(var i = 0; i<letter.length; i++){
+            this.makeBoard(i,letter[i]);
+        }
+    };
+
+    this.makeBoard = function (i,letter) {
+
+        for(var j = 0; j <=9; ++j) {
+            var coordinates = new Lyngk.Coordinates(letter, j);
+            if (coordinates.isValid()) {
+                var intersection = new Lyngk.Intersection(coordinates);
+                var c = this.randColor();
+                var piece = new Lyngk.Piece(Object.keys(Lyngk.Color)[c]);
+                intersection.pose(piece);
+                plateau.push(intersection);
             }
         }
 

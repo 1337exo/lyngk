@@ -7,20 +7,20 @@ Lyngk.State = {VACANT: 0, ONE_PIECE: 1, STACK: 2, FULL_STACK: 3};
 
 Lyngk.Intersection = function (c) {
 
-    var private_coordinate = c;
+    var privateCoordinate = c;
     var defaultState = Lyngk.State.VACANT;
-    var private_piece = [];
+    var pieces = [];
 
     this.getCoordinate = function () {
-      return private_coordinate;
+        return privateCoordinate;
     };
 
     this.getHeight = function () {
-      return private_piece.length;
+        return pieces.length;
     };
 
     this.getState = function () {
-      return defaultState;
+        return defaultState;
     };
 
     this.setState = function (state) {
@@ -28,32 +28,27 @@ Lyngk.Intersection = function (c) {
     };
 
     this.getColor = function () {
-        return private_piece[private_piece.length-1].getColor();
+        return pieces[pieces.length - 1].getColor();
     };
 
     this.getPiece = function () {
-      return private_piece;
+        return pieces;
     };
 
     this.pose = function (p) {
-        private_piece.push(p);
-
-
-        if(defaultState !== Lyngk.State.FULL_STACK){
-            if(defaultState === Lyngk.State.ONE_PIECE){
-                defaultState = Lyngk.State.STACK;
+        if (defaultState !== Lyngk.State.FULL_STACK) {
+            pieces.push(p);
+            if (pieces.length >= 3) {
+                defaultState = pieces.length - Math.floor(pieces.length / 2);
             } else {
-                defaultState = Lyngk.State.ONE_PIECE;
+                defaultState = pieces.length;
             }
         }
-
-        if(private_piece.length === 5)
-            defaultState = Lyngk.State.FULL_STACK;
     };
 
     this.retire = function (inter) {
         defaultState = Lyngk.State.VACANT;
-        inter.pose(private_piece[private_piece.length -1]);
-        private_piece.pop();
+        inter.pose(pieces[pieces.length - 1]);
+        pieces.pop();
     };
 };

@@ -10,7 +10,7 @@ var LyngkTestCase = TestCase("LyngkTestCase");
 
 LyngkTestCase.prototype.testStory1 = function () {
     var coordinates = new Lyngk.Coordinates('A', 1);
-    assertFalse(coordinates.is_valid());
+    assertFalse(coordinates.isValid());
 };
 
 
@@ -22,7 +22,7 @@ LyngkTestCase.prototype.testStory2 = function () {
     for (var l = 0; l < letter.length; ++l) {
         for (var c = 1; c < 10; ++c) {
             var coordinates = new Lyngk.Coordinates(letter[l], c);
-            if (coordinates.is_valid())
+            if (coordinates.isValid())
                 ++nbValidCase;
         }
     }

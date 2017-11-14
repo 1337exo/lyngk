@@ -5,43 +5,44 @@
 
 Lyngk.goodCoordinates = [
     'A3',
-    'B2','B3','B4','B5',
-    'C1','C2','C3','C4','C5','C6','C7',
-    'D2','D3','D4','D5','D6','D7',
-    'E2','E3','E4','E5','E6','E7','E8',
-    'F3','F4','F5','F6','F7','F8',
-    'G3','G4','G5','G6','G7','G8','G9',
-    'H5','H6','H7','H8',
+    'B2', 'B3', 'B4', 'B5',
+    'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7',
+    'D2', 'D3', 'D4', 'D5', 'D6', 'D7',
+    'E2', 'E3', 'E4', 'E5', 'E6', 'E7', 'E8',
+    'F3', 'F4', 'F5', 'F6', 'F7', 'F8',
+    'G3', 'G4', 'G5', 'G6', 'G7', 'G8', 'G9',
+    'H5', 'H6', 'H7', 'H8',
     'I7'
 ];
 
 Lyngk.Coordinates = function (c, l) {
     // implementation d'une grille
 
-    var private_col = c;
-    var private_line = l;
+    var privateCol = c;
+    var privateLine = l;
 
     // Story 1
-    this.is_valid = function () {
-      return Lyngk.goodCoordinates.indexOf(private_col+private_line)>=0;
+    this.isValid = function () {
+        return Lyngk.goodCoordinates.indexOf(privateCol + privateLine) >= 0;
     };
 
     // Story 3 et 4 Représentation
     this.toString = function () {
-      if(this.is_valid())
-          return private_col+private_line;
-      else
-          return "invalid";
+        if (this.isValid()) {
+            return privateCol + privateLine;
+        } else {
+            return "invalid";
+        }
     };
 
     // Story 5 clone
     this.clone = function () {
-      return new Lyngk.Coordinates(private_col,private_line);
+        return new Lyngk.Coordinates(privateCol, privateLine);
     };
 
     // Story 6 Hash
     this.hash = function () {
-      return parseInt(private_col.charCodeAt(0)+''+private_line);
+        return parseInt(privateCol.charCodeAt(0) + '' + privateLine);
     };
 };
 
