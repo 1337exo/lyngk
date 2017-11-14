@@ -51,7 +51,7 @@ Lyngk.Intersection = function (c) {
             defaultState = Lyngk.State.FULL_STACK;
     };
 
-    this.retir = function (inter) {
+    this.retire = function (inter) {
         defaultState = Lyngk.State.VACANT;
         inter.pose(private_piece[private_piece.length -1]);
         private_piece.pop();

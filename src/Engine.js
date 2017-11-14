@@ -51,8 +51,16 @@ Lyngk.Engine = function () {
     };
 
     this.move = function (c1,c2) {
-        if(plateau[this.getIntersection(c2)].getState() !== Lyngk.State.VACANT)
-      plateau[this.getIntersection(c1)].retir(plateau[this.getIntersection(c2)]);
+        var columns = ["A","B","C","D","E","F","G","H","I"];
+        var deltaColumn = columns.indexOf(c1[0]) - columns.indexOf(c2[0]);
+        var deltaLine = parseInt(c1[1]) - parseInt(c2[1])
+        if(plateau[this.getIntersection(c2)].getState() !== Lyngk.State.VACANT
+            && plateau[this.getIntersection(c1)].getState() !== Lyngk.State.FULL_STACK
+            && ((Math.abs(deltaColumn) === 1 && deltaLine === 0)
+                || (deltaColumn === 0 && Math.abs(deltaLine) === 1)
+                || deltaColumn === 1 && deltaLine === 1
+                || deltaColumn === -1 && deltaLine === -1))
+      plateau[this.getIntersection(c1)].retire(plateau[this.getIntersection(c2)]);
     };
 
 
